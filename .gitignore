@@ -1,0 +1,4 @@
+.env
+env/
+.aider.*
+__pycache__/
