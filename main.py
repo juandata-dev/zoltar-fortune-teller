@@ -1,8 +1,13 @@
 import tkinter as tk
 import openai
+from dotenv import load_dotenv
+import os
 
-# Tu clave de API de OpenAI
-openai.api_key = "YOUR_API_KEY"
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+
+# Obtener la clave de API de OpenAI desde las variables de entorno
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Configuración de la ventana principal
 root = tk.Tk()
