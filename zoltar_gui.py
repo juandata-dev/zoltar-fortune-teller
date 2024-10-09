@@ -38,6 +38,7 @@ def create_gui():
             width=40,
             font=("Arial", 12)
         )
+        entry.bind("<Return>", lambda event: display_fortune())
 
         def display_fortune():
             """Gets the fortune and updates the result label."""
