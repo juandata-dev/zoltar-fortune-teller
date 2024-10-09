@@ -11,7 +11,7 @@ def create_gui():
 
     try:
         # Load and display the Zoltar image as the background
-        zoltar_image = Image.open("./assets/zoltar.jpg")
+        zoltar_image = Image.open("./assets/background.jpg")
         zoltar_image = zoltar_image.resize((1920, 1080), Image.Resampling.LANCZOS)
         zoltar_photo = ImageTk.PhotoImage(zoltar_image)
 
