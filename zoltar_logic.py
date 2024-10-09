@@ -25,8 +25,6 @@ def get_fortune(question: str) -> str:
         # Make API call with proper error handling
         response = model.generate_content(prompt)
         if hasattr(response, 'text') and response.text:
-            if response.text.strip().startswith("# *SEARCH/REPLACE block* Rules:"):
-                return "Las fuerzas místicas están confusas. Inténtalo de nuevo."
             return response.text.strip()
         else:
             return "Las brumas del destino están oscuras. Inténtalo de nuevo."
