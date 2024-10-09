@@ -44,16 +44,16 @@ def get_fortune():
 # Setting up the GUI
 root = tk.Tk()
 root.title("Zoltar Fortune Teller")
-root.geometry("400x600")
+root.geometry("1920x1080")
 
 try:
     # Load and display the Zoltar image as the background
     zoltar_image = Image.open("./assets/zoltar.jpg")
-    zoltar_image = zoltar_image.resize((400, 600), Image.Resampling.LANCZOS)
+    zoltar_image = zoltar_image.resize((1920, 1080), Image.Resampling.LANCZOS)
     zoltar_photo = ImageTk.PhotoImage(zoltar_image)
 
     # Create a Canvas to hold the background image
-    canvas = tk.Canvas(root, width=400, height=600)
+    canvas = tk.Canvas(root, width=1920, height=1080)
     canvas.pack(fill="both", expand=True)
 
     # Add the image to the canvas as the background
