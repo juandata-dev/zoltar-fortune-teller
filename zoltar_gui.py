@@ -16,23 +16,13 @@ def create_gui():
         zoltar_photo = ImageTk.PhotoImage(zoltar_image)
 
         # Create a Canvas to hold the background image
-        canvas = tk.Canvas(root, width=1920, height=1080, relwidth=1, relheight=1)
-        canvas.grid(row=0, column=0)
+        canvas = tk.Canvas(root, width=1920, height=1080)
+        canvas.pack(fill=tk.BOTH, expand=True) 
 
         # Add the image to the canvas as the background
         canvas.create_image(0, 0, image=zoltar_photo, anchor="nw")
 
         # Create styled widgets
-        title_label = tk.Label(
-            root, 
-            text="🔮 Ask Zoltar Your Question 🔮",
-            font=("Arial", 16, "bold"),
-            bg="white",
-            relief="raised",
-            padx=10,
-            pady=5
-        )
-
         entry = tk.Entry(
             root,
             width=40,
@@ -69,10 +59,9 @@ def create_gui():
         )
 
         # Place widgets on the canvas with better spacing
-        title_label.grid(row=0, column=0, pady=(50, 0))
-        entry.grid(row=1, column=0, pady=20)
-        fortune_button.grid(row=2, column=0, pady=20)
-        result_label.grid(row=3, column=0)
+        entry.pack() 
+        fortune_button.pack() 
+        result_label.pack() 
 
     except FileNotFoundError:
         messagebox.showerror("Error", "Could not find the background image file!")
