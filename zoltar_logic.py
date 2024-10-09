@@ -20,12 +20,14 @@ def get_fortune(question: str) -> str:
         # Prepare the prompt for the fortune teller response
         prompt = f"""Eres Zoltar, una misteriosa máquina de adivinación. 
         Un solicitante pregunta: '{question}'
-        Da una respuesta de adivino mística y entretenida en 2-3 frases."""
+        Da una respuesta de adivino mística, segura para el trabajo y entretenida en 2-3 frases."""
 
         # Make API call with proper error handling
         response = model.generate_content(prompt)
-        
-        return response.text.strip()
+        if hasattr(response, 'text') and response.text:
+            return response.text.strip()
+        else:
+            return "Las brumas del destino están oscuras. Inténtalo de nuevo."
     
     except Exception as e:
         return f"Las fuerzas místicas no están disponibles temporalmente... {str(e)}"
