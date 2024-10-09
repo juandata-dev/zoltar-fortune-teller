@@ -125,3 +125,15 @@
 
 # 2024-10-09 12:54:20.495372
 +/run python main.py
+
+# 2024-10-09 14:46:26.308837
++la imagen esta un poco corrida hacia la derecha y abajo, ademas quiero que el label, el input y el boton esten centrados
+
+# 2024-10-09 14:46:45.043733
++y
+
+# 2024-10-09 14:46:45.048698
++/run python main.py
+
+# 2024-10-09 14:56:26.702889
++No veo el boton ni el intpu en la GUI
