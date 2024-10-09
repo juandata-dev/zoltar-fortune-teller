@@ -30,6 +30,6 @@ def get_fortune(question: str) -> str:
             return "Las brumas del destino están oscuras. Inténtalo de nuevo."
     
     except Exception as e:
-        if "Invalid operation: The\n response.text quick accessor requires\nthe response to contain a valid 'Part" in str(e):
-            return "Las fuerzas místicas están confusas. Inténtalo de nuevo."
-        return f"Las fuerzas místicas no están disponibles temporalmente... {str(e)}"
+        if "HARM" in str(e):
+            return "Las fuerzas místicas están confusas. Inténta preguntar algo diferente."
+        return f"Las fuerzas místicas no están disponibles temporalmente..."

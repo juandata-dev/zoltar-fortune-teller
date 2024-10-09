@@ -67,3 +67,61 @@
 
 # 2024-10-08 19:28:56.613814
 +I don't need openai library now, I am going to use google gemini, how can I remove the openai library ?
+
+# 2024-10-09 12:52:43.446477
++n
+
+# 2024-10-09 12:52:56.055482
++podemos manejar el caso cuando recibo esta respuesta:Las fuerzas místicas no están disponibles
++temporalmente..- ("Invalid operation: The
++ response.text quick accessor requires
++the response to contain a valid 'Part , but none were returned. The candidate's
++[finish_reason](https://ai-google-dev/api/generate-content#finishreason) is 3. The
++candidate's safety ratings are: [category HARM CATEGORÑ SEXUALLY EXPLIC
++Ifinprobability: ÑIGH\n, category: HARM CATEGORY HATE SPEECH\npr
++obãbility: NEGLIGIBLEícategory.
++HARM CATEGORY HARASSMENT\npro NEGLIGIBLE\n, category:
++HARM CATEGORY DANGEROUS CON TEfr\nprobabilityTNEGLlGlBLEñ",
++[category HARM CATEGORY SEXUALLY EXPLIC
++probability: HIGH
++category: HARM CATEGORY HATE SPEECH
++üobability: NÉGLIGIÕLE
++category: HARM CATEGORY HARASSMENT
++ñrobability: NÉGLIGIBLE
++category: HARM CATEGORY DANGEROUS CONTENT
++probability: NEGLIGIBLE)
+
+# 2024-10-09 12:52:58.865273
++n
+
+# 2024-10-09 12:53:43.123637
++y
+
+# 2024-10-09 12:53:43.135574
++/run python main.py
+
+# 2024-10-09 12:54:07.634100
++podemos manejar el caso cuando recibo esta respuesta:Las fuerzas místicas no están disponibles
++temporalmente..- ("Invalid operation: The
++ response.text quick accessor requires
++the response to contain a valid 'Part , but none were returned. The candidate's
++[finish_reason](https://ai-google-dev/api/generate-content#finishreason) is 3. The
++candidate's safety ratings are: [category HARM CATEGORÑ SEXUALLY EXPLIC
++Ifinprobability: ÑIGH\n, category: HARM CATEGORY HATE SPEECH\npr
++obãbility: NEGLIGIBLEícategory.
++HARM CATEGORY HARASSMENT\npro NEGLIGIBLE\n, category:
++HARM CATEGORY DANGEROUS CON TEfr\nprobabilityTNEGLlGlBLEñ",
++[category HARM CATEGORY SEXUALLY EXPLIC
++probability: HIGH
++category: HARM CATEGORY HATE SPEECH
++üobability: NÉGLIGIÕLE
++category: HARM CATEGORY HARASSMENT
++ñrobability: NÉGLIGIBLE
++category: HARM CATEGORY DANGEROUS CONTENT
++probability: NEGLIGIBLE)
+
+# 2024-10-09 12:54:20.483580
++y
+
+# 2024-10-09 12:54:20.495372
++/run python main.py
