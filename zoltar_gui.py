@@ -5,9 +5,35 @@ from zoltar_logic import get_fortune
 import pygame  # Import pygame for audio
 import random
 
+
+def on_alt_f4(event):
+    # Prevent Alt+F4 from closing the window
+    print("Alt+F4 pressed, but ignored")
+
 def create_gui():
+    def on_closing():
+        # This function will be called when the user tries to close the window
+        # (either by clicking the close button or pressing Alt+F4)
+        # Ask the user if they really want to close
+        return None 
+    
+    def on_secret_close(event):
+        # Secret close command
+        print("Secret close detected, closing application...")
+        root.destroy() 
+    
     """Creates the main GUI window and handles user interaction."""
-    root = tk.Tk()
+    root = tk.Tk()    
+
+    # Overriding the default close behavior
+    root.protocol("WM_DELETE_WINDOW", on_closing)
+
+    # Bind Alt+F4 event to a custom function
+    root.bind("<Alt-F4>", on_alt_f4)
+
+    # Secret key combination (Ctrl+Shift+X)
+    root.bind("<Control-Shift-X>", on_secret_close)
+
     root.title("Zoltar Fortune Teller")
     root.geometry("1920x1080")
 
