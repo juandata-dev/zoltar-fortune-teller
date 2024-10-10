@@ -161,3 +161,24 @@
 
 # 2024-10-10 11:48:35.747608
 +I need to reproduce a audio in the background while the gui is running!
+
+# 2024-10-10 14:42:27.036880
++/add main.py .env
+
+# 2024-10-10 14:42:31.323010
++yes
+
+# 2024-10-10 14:42:56.731726
++I can use aider
+
+# 2024-10-10 14:45:47.067586
++/add .gitignore
+
+# 2024-10-10 14:46:00.441380
++/add zoltar_gui.py
+
+# 2024-10-10 14:46:00.701021
++/drop .gitignore
+
+# 2024-10-10 14:48:43.345206
++pip install pygame

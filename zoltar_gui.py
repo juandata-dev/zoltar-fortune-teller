@@ -2,6 +2,8 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import messagebox
 from zoltar_logic import get_fortune
+import pygame  # Import pygame for audio
+import random
 
 def create_gui():
     """Creates the main GUI window and handles user interaction."""
@@ -9,7 +11,40 @@ def create_gui():
     root.title("Zoltar Fortune Teller")
     root.geometry("1920x1080")
 
+    # Initialize Pygame mixer for audio playback
+    pygame.mixer.init()
+
+    # List of audio files to play randomly
+    audio_files = [
+        "./assets/227_Terror_in_the_Woods.mp3",
+        "./assets/252_Vault_of_Terror.mp3",
+        "./assets/308_Skullwharf.mp3",
+        "./assets/344_Yokai_Forest.mp3",
+        "./assets/352_Black_Rider.mp3",
+        "./assets/354_Warlocks_Whisper.mp3",
+        "./assets/388_Lord_of_Bones.mp3",
+        "./assets/394_Demon_Army.mp3",
+        "./assets/404_Vampyr.mp3",
+        "./assets/430_Fire_Dance.mp3"
+    ]
+
+    def play_random_music():
+        """Plays a random audio file from the audio_files list."""
+        if not audio_files:
+            print("No audio files to play.")
+            return
+
+        # Choose a random audio file
+        audio_file = random.choice(audio_files)
+        print(f"Playing: {audio_file}")
+        
+        # Load and play the audio file
+        pygame.mixer.music.load(audio_file)
+        pygame.mixer.music.play(-1)  # Play the music indefinitely
+
     try:
+        play_random_music()  # Play a random audio file
+
         # Load and display the Zoltar image as the background
         zoltar_image = Image.open("./assets/background.jpg")
         zoltar_image = zoltar_image.resize((1920, 1080), Image.Resampling.LANCZOS)
@@ -32,7 +67,7 @@ def create_gui():
         )
         entry.bind("<Return>", lambda event: display_fortune())
         
-        # Programa para ocultar el label y limpiar el input después de 10 segundos
+        # Function to reset the GUI after showing the fortune
         def reset_gui():
             result_label.place_forget()
             result_label.config(text="")
@@ -42,11 +77,11 @@ def create_gui():
             """Gets the fortune and updates the result label."""
             user_question = entry.get()
             fortune = get_fortune(user_question)
-            # Muestra el label
+            # Show the label
             result_label.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
             result_label.config(text=fortune)
 
-            root.after(12000, reset_gui) #resstablece todo a su estado inicial
+            root.after(12000, reset_gui)  # Reset everything to its initial state
 
         fortune_button = tk.Button(
             root,
@@ -78,7 +113,6 @@ def create_gui():
         entry.place(relx=0.5, rely=0.78, anchor=tk.CENTER)
         fortune_button.place(relx=0.5, rely=0.84, anchor=tk.CENTER)
         
-        
         # Set the background color of the root window to black
         root.configure(bg="#000000")
 
@@ -92,6 +126,14 @@ def create_gui():
 
         canvas.bind("<Double-Button-1>", toggle_fullscreen)
 
+        # Block Control, Alt, and Shift keys
+        root.bind("<Control_L>", lambda event: "break")
+        root.bind("<Control_R>", lambda event: "break")
+        root.bind("<Alt_L>", lambda event: "break")
+        root.bind("<Alt_R>", lambda event: "break")
+        root.bind("<Shift_L>", lambda event: "break")
+        root.bind("<Shift_R>", lambda event: "break")
+
     except FileNotFoundError:
         messagebox.showerror("Error", "Could not find the background image file!")
         # Create a basic layout without the background image
@@ -103,6 +145,10 @@ def create_gui():
 
     # Run the Tkinter main loop
     root.mainloop()
+
+    # Stop the music when the window is closed
+    pygame.mixer.music.stop()
+    pygame.mixer.quit()
 
 if __name__ == "__main__":
     create_gui()
