@@ -76,7 +76,7 @@ def create_gui():
 
         fortune_button = tk.Button(
             root,
-            text="Prengúntale a Zoltar y presiona Enter",
+            text="Pregúntale a Zoltar y presiona Enter",
             command=display_fortune,
             font=("Arial", 14, "bold"),
             bg="#4a90e2",
