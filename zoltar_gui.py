@@ -25,8 +25,8 @@ def create_gui():
         # Create styled widgets
         entry = tk.Entry(
             root,
-            width=40,
-            font=("Arial", 12),
+            width=25,
+            font=("Arial", 28),
             highlightthickness=0,
             borderwidth=0
         )
@@ -46,13 +46,13 @@ def create_gui():
             result_label.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
             result_label.config(text=fortune)
 
-            root.after(5000, reset_gui) #resstablece todo a su estado inicial
+            root.after(12000, reset_gui) #resstablece todo a su estado inicial
 
         fortune_button = tk.Button(
             root,
-            text="Ask Zoltar",
+            text="Prengúntale a Zoltar y presiona Enter",
             command=display_fortune,
-            font=("Arial", 12, "bold"),
+            font=("Arial", 14, "bold"),
             bg="#4a90e2",
             fg="white",
             padx=20,
@@ -64,8 +64,8 @@ def create_gui():
         result_label = tk.Label(
             root,
             text="",
-            wraplength=300,
-            font=("Arial", 12),
+            wraplength=520,
+            font=("Arial", 16),
             bg="white",
             relief="sunken",
             padx=10,
@@ -75,8 +75,8 @@ def create_gui():
         )
         # Place widgets on the canvas with better spacing
         result_label.place_forget()        
-        entry.place(relx=0.5, rely=0.80, anchor=tk.CENTER)
-        fortune_button.place(relx=0.5, rely=0.85, anchor=tk.CENTER)
+        entry.place(relx=0.5, rely=0.78, anchor=tk.CENTER)
+        fortune_button.place(relx=0.5, rely=0.84, anchor=tk.CENTER)
         
         
         # Set the background color of the root window to black
