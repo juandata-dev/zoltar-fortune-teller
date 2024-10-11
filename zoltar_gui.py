@@ -107,7 +107,7 @@ def create_gui():
             result_label.place(relx=0.5, rely=0.65, anchor=tk.CENTER)
             result_label.config(text=fortune)
 
-            root.after(12000, reset_gui)  # Reset everything to its initial state
+            root.after(15000, reset_gui)  # Reset everything to its initial state
 
         fortune_button = tk.Button(
             root,
