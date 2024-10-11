@@ -2,4 +2,4 @@
 env/
 .aider.*
 __pycache__/
-.env
+.aider*
